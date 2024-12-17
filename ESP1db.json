@@ -1,0 +1,13 @@
+{
+    "sensors": [
+      {
+        "ESP1": {
+          "temperature-1": 25.5,
+          "turbidity-1": 30,
+          "voltage": 3.3
+        },
+        "timestamp": "2024-12-16T12:00:00"
+      }
+    ]
+  }
+  

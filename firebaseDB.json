@@ -1,0 +1,28 @@
+{
+    "sensors": {
+      "-OECwppoPNeQKqrx851S": {
+        "ESP1": {
+          "temperature-1": 25.5,
+          "turbidity-1": 300,
+          "voltage": 3.3
+        },
+        "ESP2": {
+          "temperature-2": 26.3,
+          "turbidity-2": 350
+        },
+        "timestamp": "2024-12-16T12:00:00"
+      },
+      "-OEDAxwkatkVmjnzD7EL": {
+        "ESP1": {
+          "temperature-1": 35.5,
+          "turbidity-1": 400,
+          "voltage": 4.3
+        },
+        "ESP2": {
+          "temperature-2": 36.3,
+          "turbidity-2": 450
+        },
+        "timestamp": "2024-12-16T13:00:00"
+      }
+    }
+  }
