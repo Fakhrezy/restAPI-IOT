@@ -103,18 +103,19 @@ foreach ($data as $sensorId => $sensor) {  // Perhatikan perubahan disini, $sens
         $stmt->bind_param("sssss", $sensorId, $temperature1, $turbidity1, $temperature2, $turbidity2);
         $stmt->execute();
 
-        // Cek apakah data berhasil dimasukkan
-        if ($stmt->affected_rows > 0) {
-            echo "Data berhasil disimpan untuk Sensor ID: $sensorId<br>";
-        } else {
-            echo "Gagal menyimpan data untuk Sensor ID: $sensorId<br>";
-        }
+        // // Cek apakah data berhasil dimasukkan
+        // if ($stmt->affected_rows > 0) {
+        //     echo "Data berhasil disimpan untuk Sensor ID: $sensorId<br>";
+        // } else {
+        //     echo "Gagal menyimpan data untuk Sensor ID: $sensorId<br>";
+        // }
 
         // Menutup statement
         $stmt->close();
-    } else {
-        echo "Data dengan Sensor ID $sensorId sudah ada di database, tidak perlu disimpan lagi.<br>";
-    }
+    } 
+    // else {
+    //     echo "Data dengan Sensor ID $sensorId sudah ada di database, tidak perlu disimpan lagi.<br>";
+    // }
 }
 
 // Menutup koneksi MySQL
