@@ -103,7 +103,7 @@ foreach ($data as $sensorId => $sensor) {  // Perhatikan perubahan disini, $sens
         $stmt->bind_param("sssss", $sensorId, $temperature1, $turbidity1, $temperature2, $turbidity2);
         $stmt->execute();
 
-        // // Cek apakah data berhasil dimasukkan
+        // DEBUG POSTING DATA :
         // if ($stmt->affected_rows > 0) {
         //     echo "Data berhasil disimpan untuk Sensor ID: $sensorId<br>";
         // } else {
@@ -114,6 +114,7 @@ foreach ($data as $sensorId => $sensor) {  // Perhatikan perubahan disini, $sens
         $stmt->close();
     } 
     // else {
+            // Cek redudansi data
     //     echo "Data dengan Sensor ID $sensorId sudah ada di database, tidak perlu disimpan lagi.<br>";
     // }
 }
