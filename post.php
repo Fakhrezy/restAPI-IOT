@@ -18,21 +18,20 @@ if (isset($_GET['action']) && $_GET['action'] == 'store') {
         $sensorData = $data["sensors"][0]; // Mengakses sensor pertama dalam array
 
         // Validasi apakah data yang dibutuhkan ada
-        if (isset($sensorData["ESP1"]["temperature-1"], $sensorData["ESP1"]["turbidity-1"], $sensorData["ESP1"]["voltage"], 
+        if (isset($sensorData["ESP1"]["temperature-1"], $sensorData["ESP1"]["turbidity-1"], 
                   $sensorData["ESP2"]["temperature-2"], $sensorData["ESP2"]["turbidity-2"], $sensorData["timestamp"])) {
 
             // Ambil nilai dari JSON
             $temperature1 = $sensorData["ESP1"]["temperature-1"];
             $turbidity1 = $sensorData["ESP1"]["turbidity-1"];
-            $voltage = $sensorData["ESP1"]["voltage"];
             $temperature2 = $sensorData["ESP2"]["temperature-2"];
             $turbidity2 = $sensorData["ESP2"]["turbidity-2"];
             $timestamp = $sensorData["timestamp"];  // Mengambil timestamp dari sensor data
 
             // Query untuk menyimpan data ke MySQL dengan prepared statements
-            $stmt = $conn->prepare("INSERT INTO sensor_data (temperature1, turbidity1, voltage, temperature2, turbidity2) 
-                                    VALUES (?, ?, ?, ?, ?)");
-            $stmt->bind_param("ddddd", $temperature1, $turbidity1, $voltage, $temperature2, $turbidity2);
+            $stmt = $conn->prepare("INSERT INTO sensor_data (temperature1, turbidity1, temperature2, turbidity2) 
+                                    VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("dddd", $temperature1, $turbidity1, $temperature2, $turbidity2);
 
             // Eksekusi query
             if ($stmt->execute()) {
@@ -40,8 +39,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'store') {
                 $firebaseData = array(
                     'ESP1' => array(
                         'temperature-1' => $temperature1,
-                        'turbidity-1' => $turbidity1,
-                        'voltage' => $voltage
+                        'turbidity-1' => $turbidity1
                     ),
                     'ESP2' => array(
                         'temperature-2' => $temperature2,
