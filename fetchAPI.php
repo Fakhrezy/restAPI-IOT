@@ -2,7 +2,8 @@
 // Koneksi ke database MySQL
 $servername = "localhost";
 $username = "root";  
-$password = "";      
+$password = "";
+      
 $dbname = "db_iot_tb";  
 
 // Membuat koneksi ke MySQL
