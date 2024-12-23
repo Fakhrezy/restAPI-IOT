@@ -4,3 +4,6 @@
 
 ##### **API get dari firebase dan post ke MySQL:**
 `http://localhost/smartgarden/fetchAPI.php`
+
+##### **API get nilai rata-rata:**
+`http://localhost/smartgarden/avg.php`

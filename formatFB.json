@@ -1,0 +1,15 @@
+{
+    "sensors": {
+        "-OERxuMF1ZzWNW3Ersug": {
+            "ESP1": {
+                "temperature-1": 28.19,
+                "turbidity-1": 4017
+            },
+            "ESP2": {
+                "temperature-2": 0,
+                "turbidity-2": 0
+            },
+            "timestamp": "2024-12-19 03:30:36"
+        }
+    }
+}
